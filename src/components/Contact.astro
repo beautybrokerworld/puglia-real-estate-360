@@ -1,5 +1,6 @@
 ---
 import {properties, routes, type Lang} from '../data/properties';
+import {business} from '../data/business';
 const {lang='it', propertyId} = Astro.props as {lang:Lang, propertyId?:string};
 const it=lang==='it';
 ---
@@ -11,7 +12,7 @@ const it=lang==='it';
     <div class="contact-details">
       <a class="link" href="mailto:pugliarealestate360@gmail.com">pugliarealestate360@gmail.com</a>
       <a class="link" href="tel:+393202354042">+39 320 235 4042</a>
-      <span>Via Marco Basseo, Lecce</span>
+      <span>{business.address}</span>
     </div>
   </div>
   <form class="form booking-form" action="/api/contact" method="post" data-endpoint="/api/contact"

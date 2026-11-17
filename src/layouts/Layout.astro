@@ -6,6 +6,7 @@ import '@fontsource/instrument-sans/500.css';
 import '../styles/site.css';
 import Contact from '../components/Contact.astro';
 import {routes,type Lang} from '../data/properties';
+import {business} from '../data/business';
 const {lang='it',page='home',title,description,contact=true,contactProperty,languagePaths,shareImage} = Astro.props as {lang:Lang,page:'home'|'properties'|'privacy'|'property',title:string,description:string,contact?:boolean,contactProperty?:string,languagePaths?:Record<Lang,string>,shareImage?:string};
 const it=lang==='it',other=it?'en':'it';
 const url=new URL(Astro.url.pathname,Astro.site);
@@ -53,7 +54,14 @@ const englishHref=languagePaths?.en??routes.en[fallbackPage];
 <footer class:list={['footer','closing',{'footer--compact':!contact,'footer--contact':contact}]} id="contatti" aria-labelledby={contact?'contact-heading':undefined}>
   <div class="wrap">
     {contact?<Contact lang={lang} propertyId={contactProperty}/>:<div class="closing__cta"><a class="link" href={routes[lang].home}>{it?'Torna alla home':'Return to home'}</a></div>}
-    <div class="closing__links"><div class="footer__legal"><span>© {new Date().getFullYear()} Puglia Real Estate 360</span><a class="link" href={routes[lang].privacy}>Privacy</a><a class="link developer-credit" href="https://aldosimone99.github.io" target="_blank" rel="noopener noreferrer">{it?'Sviluppato da':'Developed by'} <strong>Aldosimone</strong></a></div></div>
+    <div class="closing__links">
+      <div class="footer__business" aria-label={it?'Dati dell’attività':'Business details'}>
+        <span>{business.name} · {business.owner}</span>
+        <span>{business.address}</span>
+        <span>{it?'P. IVA':'VAT no.'} {business.vatNumber} · REA {business.rea}</span>
+      </div>
+      <div class="footer__legal"><span>© {new Date().getFullYear()} {business.name}</span><a class="link" href={routes[lang].privacy}>Privacy</a><a class="link developer-credit" href="https://aldosimone99.github.io" target="_blank" rel="noopener noreferrer">{it?'Sviluppato da':'Developed by'} <strong>Aldosimone</strong></a></div>
+    </div>
   </div>
 </footer>
 <script is:inline type="module" src="/assets/system.js"></script><script is:inline type="module" src="/assets/motion/motion.js"></script><script is:inline type="module" src="/assets/layout/layout.js"></script>

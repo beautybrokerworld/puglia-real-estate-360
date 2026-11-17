@@ -1,5 +1,12 @@
 GATE: OFF (no build active)
 
+## Dati dell’attività nei footer — 17 novembre 2026
+
+- Su richiesta del cliente, il footer condiviso IT/EN riporta i dati dell’intermediaria presenti nel documento fornito in chat: Federica Arsieni, Via Balsamo 9B, 73100 Lecce, P. IVA 05396800756 e REA LE363839, associati al marchio Puglia Real Estate 360. Il vecchio indirizzo è stato sostituito anche nel blocco contatti.
+- I dati sono centralizzati in `src/data/business.ts`; il documento integrale, il codice fiscale personale e i dati del venditore non sono stati aggiunti al progetto. L’indirizzo viene riportato senza attribuirgli qualifiche non indicate dal cliente.
+- I dati dell’attività e la riga con copyright, privacy e firma sviluppatore restano al fondo della pagina. Le nuove informazioni si dispongono su righe separate sui telefoni.
+- Build riuscita: 18 pagine. Verificata la presenza dei nuovi dati in tutti i file HTML generati e l’assenza del vecchio indirizzo. Controllati visivamente il footer italiano a 1440×900 e quello inglese a 390×844; dati leggibili e crediti al fondo della pagina. `git diff --check` senza rilievi. Il gate integrale resta OFF; i dati reali del cliente prevalgono sulle convenzioni per recapiti dimostrativi della skill.
+
 ## Completamento Aria Sana dalla pagina corretta — 17 novembre 2026
 
 - Fonte indicata dal cliente: `https://www.pugliarealestate360.com/la-terrazza-di-otranto`. Verificati l'HTML italiano e la corrispondenza della pergola, del corridoio giallo, della cucina e della zona pranzo con lo screenshot. Il vecchio set “Maestrale” non è stato usato.
