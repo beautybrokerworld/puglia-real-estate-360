@@ -72,4 +72,4 @@ Provare l'invio reale e la ricezione prima del lancio. I test automatici usano u
 
 Footer richiesto: **Sviluppato da Aldosimone**, collegato a https://aldosimone99.github.io. Progetto autonomo, senza dipendenze operative da Wix.
 
-Il piano completo e il registro delle verifiche si trovano nella cartella `outputs` che contiene questo progetto.
+Il piano completo e il registro delle verifiche si trovano nei file `PROJECT-PLAN.md` e `VERIFICHE.md`.
