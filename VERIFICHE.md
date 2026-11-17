@@ -1,5 +1,15 @@
 GATE: OFF (no build active)
 
+## Passaggio a FormSubmit — 17 novembre 2026
+
+- Su richiesta del cliente, il modulo usa l'invio nativo POST a `https://formsubmit.co/pugliarealestate360@gmail.com`. Grafica, campi, selezione immobile, validazione accessibile e lingue restano nel sito; FormSubmit gestisce reCAPTCHA, attivazione e invio email. `_honey` è il campo antispam previsto dal servizio e reCAPTCHA non viene disabilitato.
+- Rimosse la funzione `/api/contact`, le configurazioni Resend e i nove test specifici del vecchio endpoint. Non c'è più un backend email da configurare su Vercel. Le precedenti verifiche dei test server, conservate sotto come storico, non certificano FormSubmit.
+- Aggiunte `/grazie/` e `/en/thank-you/`, sempre `noindex`. Lo script costruisce `_next` dall'origine del browser: anteprima Vercel, dominio definitivo e locale hanno una destinazione coerente. Senza JavaScript rimane il flusso nativo con conferma del servizio. Nessuno stato di successo viene generato da un timer o da un click sul pulsante.
+- Aggiornati informativa descrittiva IT/EN, `.env.example`, istruzioni Vercel e piano. Riferimenti verificati: documentazione ufficiale FormSubmit, documentazione AJAX e privacy del servizio. Il flusso nativo mantiene la gestione antispam e attivazione del fornitore.
+- Build riuscita: 20 pagine statiche. Controllati i 16 moduli generati e l'assenza del vecchio endpoint. Eseguito il codice compilato che costruisce `_next` per tutte le pagine con modulo su tre origini (locale, anteprima Vercel e dominio finale): 48 casi riusciti, senza richieste di rete. Conferme escluse dalla sitemap e marcate `noindex`. `git diff --check` senza rilievi.
+- Controllate visivamente la conferma italiana a 1440×900 e quella inglese a 390×844: testo e pulsanti leggibili, footer al fondo della pagina, nessuna immagine necessaria al messaggio di conferma. Le pagine del catalogo mantengono il layout esistente.
+- Attivazione e recapito reale non verificati: non sono stati inviati messaggi o richieste di attivazione. Il primo invio dal sito richiede di confermare il link ricevuto sulla Gmail; dopo l'attivazione va verificata una seconda richiesta. Il gate integrale resta OFF.
+
 ## Dati dell’attività nei footer — 17 novembre 2026
 
 - Su richiesta del cliente, il footer condiviso IT/EN riporta i dati dell’intermediaria presenti nel documento fornito in chat: Federica Arsieni, Via Balsamo 9B, 73100 Lecce, P. IVA 05396800756 e REA LE363839, associati al marchio Puglia Real Estate 360. Il vecchio indirizzo è stato sostituito anche nel blocco contatti.
@@ -106,7 +116,7 @@ Le gallerie attuali contengono 75 fotografie recuperate dal sito italiano del cl
 
 1. Revisione visiva delle dodici schede di dettaglio su desktop e telefono.
 2. Galleria Aria Sana completata: 17 foto della pagina italiana indicata dal cliente; non resta un'attesa di fotografie per questa scheda.
-3. Importazione in Vercel e configurazione del servizio email: chiave Resend, mittente verificato, destinatario confermato e URL ambiente.
+3. Importazione in Vercel, URL ambiente e attivazione FormSubmit dalla Gmail; non servono più chiavi Resend o un dominio mittente.
 4. Prova di invio e ricezione reale; il successo dei test simulati non equivale a recapito verificato.
 5. Informativa privacy completa da concordare con il titolare: la pagina descrittiva presente non è un testo legale completo approvato.
 6. Verifica finale dati e diritti fotografici, protezione antispam in produzione, dominio, DNS e redirect inglesi da mappare separatamente.

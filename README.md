@@ -1,6 +1,6 @@
 # Puglia Real Estate 360
 
-Sito bilingue per sei case vacanza in Salento. Astro + TypeScript, pagine statiche e una funzione Vercel per il modulo di contatto. Stile Mediterraneo editoriale approvato dal cliente.
+Sito bilingue per case vacanza in Salento. Astro + TypeScript, pagine statiche e modulo di contatto collegato a FormSubmit. Stile Mediterraneo editoriale approvato dal cliente.
 
 ## Avvio
 
@@ -15,10 +15,9 @@ Richiede Node 24. In questo ambiente di lavoro è disponibile anche Node 26; se 
 ```sh
 npm run build
 npm run preview
-npm test
 ```
 
-`astro dev` mostra le pagine. L'endpoint `/api/contact` viene eseguito da Vercel: per provarlo insieme alle pagine usare `vercel dev`, con le variabili di ambiente configurate. L'anteprima statica locale non simula l'invio e non mostra conferme fittizie.
+Il modulo invia direttamente a FormSubmit anche da `astro dev` o dall'anteprima statica servita via HTTP. Non serve una funzione Vercel locale. Un invio dal modulo è reale: per le verifiche automatiche non inviare dati al servizio.
 
 ## Pagine
 
@@ -27,6 +26,7 @@ npm test
 | `/` | `/en/` |
 | `/soluzioni/` | `/en/properties/` |
 | `/privacy/` | `/en/privacy/` |
+| `/grazie/` | `/en/thank-you/` |
 
 Il selettore lingua mantiene la pagina equivalente. Ogni scheda preseleziona l'immobile nel modulo. È supportato anche `?property=ID#contatti`, utile per i vecchi indirizzi.
 
@@ -44,24 +44,27 @@ Non pubblicare prezzi, capienza, camere o distanze senza conferma. L'associazion
 
 1. Collegare il repository GitHub a un progetto Vercel.
 2. Usare preset Astro, `npm run build`, directory `dist`, Node 24.
-3. Verificare un dominio mittente su Resend.
-4. Impostare queste variabili nei contesti appropriati:
+3. Impostare queste variabili nei contesti appropriati:
 
 | Variabile | Valore |
 |---|---|
-| `RESEND_API_KEY` | Chiave del servizio, solo server |
-| `CONTACT_FROM` | Mittente verificato, ad esempio `Puglia Real Estate 360 <sito@DOMINIO-VERIFICATO>` |
-| `CONTACT_TO` | `pugliarealestate360@gmail.com` |
 | `SITE_URL` | Origine del sito, senza percorso; in produzione `https://www.pugliarealestate360.com` |
 | `PUBLIC_INDEXABLE` | `false` nelle anteprime; `true` solo sul dominio finale approvato |
 
-`SITE_URL` determina canonical, hreflang, sitemap e controllo dell'origine del modulo. Nelle anteprime impostarlo all'URL dell'ambiente che si sta verificando. L'endpoint è same-origin e non espone la chiave al browser.
+`SITE_URL` determina canonical, hreflang e sitemap. Nelle anteprime impostarlo all'URL dell'ambiente che si sta verificando. Il ritorno dal modulo usa automaticamente il dominio aperto nel browser.
 
-La funzione valida origine, formato, dimensione del corpo anche in streaming, campi, immobile e lettura privacy; rifiuta il campo honeypot compilato. Gli invii identici entro una finestra di dieci minuti usano una chiave di idempotenza. Il destinatario è deciso sul server, la risposta all'ospite usa `reply_to`. Una risposta positiva richiede un ID email restituito da Resend. Non vengono registrati messaggi o recapiti nei log dell'applicazione.
+4. Dopo il deploy, inviare una prima richiesta di prova dal sito. FormSubmit manda un'email di attivazione a **pugliarealestate360@gmail.com**: aprire Gmail, controllare anche lo spam e confermare il link ricevuto.
+5. Inviare una seconda richiesta e verificare che arrivi nella casella Gmail e che il pulsante Rispondi usi l'email dell'ospite. Ripetere la verifica sul dominio definitivo, completando l'eventuale attivazione richiesta dal servizio.
 
-Il controllo origine e l'honeypot sono protezioni di base, non sostituiscono un limite distribuito di frequenza. Prima dell'esposizione pubblica configurare una regola sul firewall Vercel per `/api/contact` oppure un controllo antispam server verificato. Nessuna dipendenza da memoria locale della funzione per contatori persistenti.
+Il destinatario è impostato nell'attributo `action` di `src/components/Contact.astro`: `https://formsubmit.co/pugliarealestate360@gmail.com`. Non servono chiavi API, verifica di un dominio mittente o variabili email. Eventuali vecchie variabili `RESEND_API_KEY`, `CONTACT_FROM` e `CONTACT_TO` possono essere eliminate da Vercel.
 
-Provare l'invio reale e la ricezione prima del lancio. I test automatici usano un provider simulato e non spediscono email.
+Il browser controlla campi obbligatori, email, lunghezze e lettura privacy; il servizio esterno gestisce l'invio e l'antispam. reCAPTCHA resta attivo nella pagina di FormSubmit e il campo `_honey` aggiunge un honeypot. Il campo `email` abilita la risposta diretta all'ospite; `_subject` e `_template=table` impostano oggetto e presentazione dell'email. Non è configurata una risposta automatica all'ospite.
+
+Dopo l'invio, FormSubmit riporta alla conferma nella lingua del modulo (`/grazie/` oppure `/en/thank-you/`), senza conferme simulate in JavaScript. Senza JavaScript, il modulo mantiene l'invio nativo e usa la pagina di conferma di FormSubmit. Le due conferme del sito sono sempre `noindex`. Le schermate di attivazione, reCAPTCHA ed errore restano gestite dal servizio.
+
+L'endpoint Resend e i relativi test server sono stati rimossi perché non fanno più parte del flusso. Verificare il recapito reale dopo l'attivazione: la build e le verifiche locali non dimostrano la consegna su Gmail.
+
+Documentazione ufficiale: [configurazione e funzionalità di FormSubmit](https://formsubmit.co/documentation), [attivazione iniziale](https://formsubmit.co/), [privacy del servizio](https://formsubmit.co/privacy.pdf).
 
 ## Prima del dominio definitivo
 

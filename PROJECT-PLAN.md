@@ -14,7 +14,7 @@ Ricostruire il sito fuori da Wix, con lo stile «Mediterraneo editoriale» scelt
 - Pagine privacy nelle due lingue, da approvare prima del lancio.
 - Dati immobili in `src/data/properties.ts`, traduzioni condivise nei componenti.
 - Gallerie locali in `src/data/property-galleries.json`; fonti e trasformazioni documentate in `PROPERTY-SOURCES.json` e `ASSET-SOURCES.json`.
-- Modulo a fine pagina con funzione Vercel `/api/contact`, provider email Resend configurabile con variabili d'ambiente.
+- Modulo a fine pagina con invio nativo a FormSubmit e conferma bilingue; nessuna funzione email o chiave API su Vercel.
 - Footer: «Sviluppato da Aldosimone» / «Developed by Aldosimone», link `https://aldosimone99.github.io`.
 - Destinatario richieste confermato: `pugliarealestate360@gmail.com`.
 
@@ -51,17 +51,18 @@ Non dedurre camere, ospiti, prezzi o distanze dalle vecchie schede: il sito Wix 
 
 ### 3. Contatto
 - [x] Campi nome, email, telefono facoltativo, immobile, messaggio; informativa privacy accessibile.
-- [x] Errori sotto i campi, focus sul primo errore, stato invio e conferma soltanto dopo risposta positiva del servizio.
-- [x] Validazione server, limiti lunghezza e dimensione richiesta, controllo origine e honeypot.
-- [ ] Configurare `RESEND_API_KEY`, `CONTACT_FROM`, `CONTACT_TO`, `SITE_URL` su Vercel (mai nel repository).
-- [ ] Verificare il mittente nel servizio email e provare un invio reale al destinatario autorizzato prima del lancio.
-- [ ] Valutare la protezione antispam aggiuntiva sulla base dei log prima di esporre il modulo pubblico.
+- [x] Errori sotto i campi e focus sul primo errore; conferma bilingue raggiunta dopo il ritorno da FormSubmit.
+- [x] Collegare FormSubmit al destinatario confermato, con reCAPTCHA attivo e honeypot; rimuovere l'endpoint e la configurazione Resend.
+- [ ] Configurare `SITE_URL` e `PUBLIC_INDEXABLE` su Vercel per l'ambiente corretto.
+- [ ] Attivare FormSubmit dal link ricevuto su Gmail dopo il primo invio.
+- [ ] Provare un secondo invio e verificare ricezione e risposta all'ospite prima del lancio.
 
 ### 4. Qualità
 - [x] Build di produzione riuscita.
 - [x] Build aggiornata con 18 pagine e dodici route di dettaglio.
 - [ ] Controllo visivo delle nuove schede a desktop e telefono; il PASS del gate precedente riguarda la homepage, non queste pagine.
-- [x] Test mirati del server: dati validi, errori, honeypot, provider non configurato, fallimento provider.
+- [x] Test mirati della prima versione server, poi rimossi insieme all'endpoint dopo il passaggio a FormSubmit; non verificano il flusso attuale.
+- [x] Build FormSubmit: 20 pagine, 16 moduli diretti e 48 verifiche del ritorno per lingua e origine. Nessun invio reale eseguito.
 - [ ] Verifica collegamenti, traduzioni, preselezione immobile, menu e uso da tastiera.
 - [x] Screenshot e controllo a 1440, 1024, 820, 768, 390; overflow a 320 nel gate della homepage (vedere limiti in VERIFICHE.md).
 - [x] Verifiche della skill design-taste-frontend eseguite; stato, limiti e deroga riportati in `VERIFICHE.md`.
@@ -96,13 +97,15 @@ Voce: concreta e ospitale, località e caratteristiche verificate; niente recens
 - Catalogo: https://www.pugliarealestate360.com/elenco-vacanze-otranto-appartamenti
 - Astro su Vercel: https://docs.astro.build/en/guides/deploy/vercel/
 - Vercel Functions: https://vercel.com/docs/functions
-- Resend: https://resend.com/docs/api-reference/emails/send-email
+- FormSubmit: https://formsubmit.co/documentation
 
 ## Stato
 
 Piano avviato il 17 novembre 2026. Le caselle verranno aggiornate sulla base delle verifiche realmente eseguite. Pubblicazione, invio email e passaggio DNS non vanno dichiarati completati senza riscontro.
 
 ## Aggiornamento di esecuzione
+
+Aggiornamento modulo: il cliente ha scelto FormSubmit. Il modulo invia direttamente al servizio, con reCAPTCHA e honeypot, e torna alla conferma nella lingua selezionata. La funzione email Vercel è stata eliminata, insieme ai suoi test e alle variabili email. Restano da attivare la casella su FormSubmit e verificare un recapito reale. Le note successive sulla prima implementazione descrivono le verifiche storiche della versione precedente.
 
 Prima implementazione completata: landing, catalogo, privacy in due lingue e modulo con 9 test server passati. La build corrente genera 18 pagine statiche, incluse le dodici schede immobiliari. Nessuna email reale inviata. La pagina privacy è una base da completare con il titolare. Il repository privato GitHub è stato creato e popolato dal cliente.
 

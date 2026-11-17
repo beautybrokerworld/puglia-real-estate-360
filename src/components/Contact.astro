@@ -15,13 +15,13 @@ const it=lang==='it';
       <span>{business.address}</span>
     </div>
   </div>
-  <form class="form booking-form" action="/api/contact" method="post" data-endpoint="/api/contact"
-    data-fix={it?'Controlla i campi indicati: {n}.':'Please check the marked fields: {n}.'}
-    data-sending={it?'Invio della richiesta…':'Sending your enquiry…'}
-    data-sent={it?'La tua richiesta è stata inviata. Ti risponderemo via email.':'Your enquiry has been sent. We will reply by email.'}
-    data-failed={it?'Invio non riuscito. I dati sono rimasti nel modulo: riprova o scrivici via email.':'Your enquiry could not be sent. Your details are still here: try again or email us.'}>
+  <form class="form booking-form" action="https://formsubmit.co/pugliarealestate360@gmail.com" method="post"
+    data-return-path={it?'/grazie/':'/en/thank-you/'}
+    data-fix={it?'Controlla i campi indicati: {n}.':'Please check the marked fields: {n}.'}>
+    <input type="hidden" name="_subject" value="Richiesta soggiorno — Puglia Real Estate 360"/>
+    <input type="hidden" name="_template" value="table"/>
     <input type="hidden" name="lang" value={lang}/>
-    <div class="hp" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" autocomplete="off" tabindex="-1"/></div>
+    <div class="hp" aria-hidden="true"><label for="website">Website</label><input id="website" name="_honey" autocomplete="off" tabindex="-1"/></div>
     <div class="form-pair">
       <div class="field"><label for="name">{it?'Nome e cognome':'Full name'} <span aria-hidden="true">*</span></label><input id="name" name="name" autocomplete="name" required minlength="2" maxlength="100" data-error={it?'Inserisci il tuo nome (almeno 2 caratteri).':'Enter your name (at least 2 characters).'}/></div>
       <div class="field"><label for="email">Email <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" required maxlength="254" data-error={it?'Inserisci un indirizzo email valido.':'Enter a valid email address.'}/></div>
@@ -36,3 +36,14 @@ const it=lang==='it';
     <p class="form__status" role="status" data-form-status></p>
   </form>
 </div>
+
+<script>
+// Resolve the return URL in the browser so previews and the final domain both work.
+// Without JavaScript, FormSubmit uses its own confirmation page.
+document.querySelectorAll<HTMLFormElement>('form[data-return-path]').forEach(form=>{
+  const next=document.createElement('input');
+  next.type='hidden';next.name='_next';
+  next.value=new URL(form.dataset.returnPath!,location.origin).href;
+  form.append(next);
+});
+</script>

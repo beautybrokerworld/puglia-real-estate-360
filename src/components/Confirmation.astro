@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {routes,type Lang} from '../data/properties';
+const {lang='it'}=Astro.props as {lang:Lang};const it=lang==='it';
+---
+<Layout lang={lang} page="confirmation" contact={false} noindex
+  languagePaths={{it:'/grazie/',en:'/en/thank-you/'}}
+  title={it?'Grazie per la tua richiesta':'Thank you for your enquiry'}
+  description={it?'Conferma della richiesta di informazioni per il tuo soggiorno.':'Confirmation of your enquiry about a stay.'}>
+  <section class="confirmation-section" aria-labelledby="confirmation-heading">
+    <div class="wrap"><div class="confirmation-copy">
+      <p class="eyebrow">Puglia Real Estate 360</p>
+      <h1 id="confirmation-heading">{it?'Grazie per averci scritto.':'Thank you for getting in touch.'}</h1>
+      <p class="t-lead">{it?'La tua richiesta è stata inviata. Ti risponderemo via email con le informazioni sul soggiorno.':'Your enquiry has been sent. We will reply by email with information about your stay.'}</p>
+      <a class="btn btn--primary" href={routes[lang].properties}>{it?'Torna alle nostre case':'Back to our homes'}<span aria-hidden="true">↗</span></a>
+    </div></div>
+  </section>
+</Layout>

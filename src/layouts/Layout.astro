@@ -7,10 +7,10 @@ import '../styles/site.css';
 import Contact from '../components/Contact.astro';
 import {routes,type Lang} from '../data/properties';
 import {business} from '../data/business';
-const {lang='it',page='home',title,description,contact=true,contactProperty,languagePaths,shareImage} = Astro.props as {lang:Lang,page:'home'|'properties'|'privacy'|'property',title:string,description:string,contact?:boolean,contactProperty?:string,languagePaths?:Record<Lang,string>,shareImage?:string};
+const {lang='it',page='home',title,description,contact=true,contactProperty,languagePaths,shareImage,noindex=false} = Astro.props as {lang:Lang,page:'home'|'properties'|'privacy'|'property'|'confirmation',title:string,description:string,contact?:boolean,contactProperty?:string,languagePaths?:Record<Lang,string>,shareImage?:string,noindex?:boolean};
 const it=lang==='it',other=it?'en':'it';
 const url=new URL(Astro.url.pathname,Astro.site);
-const fallbackPage=page==='property'?'properties':page;
+const fallbackPage=page==='property'?'properties':page==='confirmation'?'home':page;
 const italianHref=languagePaths?.it??routes.it[fallbackPage];
 const englishHref=languagePaths?.en??routes.en[fallbackPage];
 ---
@@ -21,7 +21,7 @@ const englishHref=languagePaths?.en??routes.en[fallbackPage];
   <title>{title} | Puglia Real Estate 360</title><meta name="description" content={description}/>
   <meta name="page-type" content="service"/><meta name="site-kind" content="other"/>
   <meta name="theme-color" content="#F5F1E8"/>
-  <meta name="robots" content={import.meta.env.PUBLIC_INDEXABLE==='true'?'index,follow':'noindex,follow'}/>
+  <meta name="robots" content={!noindex&&import.meta.env.PUBLIC_INDEXABLE==='true'?'index,follow':'noindex,follow'}/>
   <link rel="canonical" href={url}/><link rel="alternate" hreflang="it" href={new URL(italianHref,Astro.site)}/><link rel="alternate" hreflang="en" href={new URL(englishHref,Astro.site)}/><link rel="alternate" hreflang="x-default" href={new URL(italianHref,Astro.site)}/>
   <meta property="og:type" content="website"/><meta property="og:title" content={`${title} | Puglia Real Estate 360`}/><meta property="og:description" content={description}/><meta property="og:image" content={new URL(shareImage??'/images/lecce-aria-sana.webp',Astro.site)}/><meta property="og:url" content={url}/><meta name="twitter:card" content="summary_large_image"/>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
@@ -32,7 +32,7 @@ const englishHref=languagePaths?.en??routes.en[fallbackPage];
   <script is:inline>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700);document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
   <link rel="modulepreload" href="/assets/moments/moments.js"/><link rel="modulepreload" href="/assets/moments/lib.js"/><link rel="modulepreload" href="/assets/moments/picture-develops/moment.js"/>
 </head>
-<body>
+<body class:list={{'confirmation-page':page==='confirmation'}}>
 <!-- service; approved design: Mediterranean editorial, ivory/olive, Instrument Serif/Sans, editorial hero, nav-split, footer-columns, close-type, block buttons, wordmark; picture-develops film; no WebGL. -->
 <header class="nav"><div class="wrap nav__bar">
   <a class="skip-link" href="#top">{it?'Vai al contenuto':'Skip to content'}</a>
