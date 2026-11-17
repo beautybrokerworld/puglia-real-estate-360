@@ -1,5 +1,53 @@
 GATE: OFF (no build active)
 
+## Completamento Aria Sana dalla pagina corretta — 17 novembre 2026
+
+- Fonte indicata dal cliente: `https://www.pugliarealestate360.com/la-terrazza-di-otranto`. Verificati l'HTML italiano e la corrispondenza della pergola, del corridoio giallo, della cucina e della zona pranzo con lo screenshot. Il vecchio set “Maestrale” non è stato usato.
+- Il carosello contiene 20 posizioni con 17 file diversi. Mantenuta la copertina già confermata e importate le altre 16 fotografie, tutte locali in WebP con varianti responsive. Aria Sana ora ha una galleria unica di 16 immagini oltre alla copertina; totale del catalogo: 75 foto.
+- Rimossa la descrizione provvisoria che parlava di una sola immagine. La nuova scheda IT/EN riporta i dati del testo italiano: tre camere, due bagni, 120 m² esterni, cucina con camino, zona pranzo, terrazzo con verde, balcone, lavanderia e parcheggio gratuito in zona. Il contenuto inglese del vecchio Wix reindirizza a dati non corrispondenti e non è stato usato come fonte della descrizione.
+- `PROPERTY-SOURCES.json` e `ASSET-SOURCES.json` registrano il nuovo URL e i singoli file. Le etichette alternative IT/EN sono state scritte dopo la revisione visiva delle 17 foto.
+- Build riuscita: 18 pagine. Controllati l'HTML delle dodici schede, tutti i file e le varianti responsive: 150 riferimenti fotografici complessivi nelle due lingue, nessuna immagine mancante. Screenshot Aria Sana verificati a 1440×900 e 390×844: presentazione e galleria si caricano con le immagini corrette. `git diff --check` senza rilievi. Il gate integrale resta OFF.
+
+## Gallerie unificate e copertine delle strutture — 17 novembre 2026
+
+- Le fotografie di ogni casa sono raccolte in una sola griglia «Foto della struttura», senza la seconda sezione «Altri scorci della proprietà» e senza cambio di sfondo. La galleria cresce con il numero di immagini; la copertina è mostrata nella presentazione della casa e non ripetuta nella griglia.
+- Copertine scelte dopo la revisione dei provini e delle fotografie originali: giardino per Lecce; camera con balcone per Otranto sul mare; piscina per Galugnano; unica pergola confermata per Aria Sana; sala con volte in pietra per Tramontana; terrazza vista mare per La Terrazza. La stessa selezione alimenta catalogo, pagina di dettaglio e immagine di condivisione della struttura. Il file orizzontale di La Terrazza ha una cornice proporzionata anche nel dettaglio.
+- Ogni immagine conserva la descrizione IT/EN associata al proprio file, indipendentemente dalla scelta della copertina. Per Aria Sana resta escluso il set non confermato con vista mare.
+- Build riuscita: 18 pagine. Controllo dell'HTML di tutte le dodici schede: 118 riferimenti fotografici, corrispondenti alle 59 foto in ciascuna lingua, nessun file perso; una sola galleria quando esistono foto oltre la copertina. `git diff --check` senza rilievi.
+- Controllati visivamente su desktop il catalogo con tutte le sei copertine, la presentazione della villetta di Lecce e l'intera galleria continua. Il gate integrale resta OFF: queste sono verifiche mirate, non un nuovo PASS completo della skill.
+
+## Catalogo subito visibile e crediti a fondo pagina — 17 novembre 2026
+
+- Rimosso dal catalogo IT/EN il blocco di copertina, inclusi fotografia e pulsante «Scopri le case». La pagina apre con un'introduzione compatta e le fotografie delle strutture già nel primo viewport. Le prime tre immagini sono caricate subito; i titoli delle schede sono H2 sotto l'H1 della pagina.
+- Nella chiusura condivisa, il testo e il modulo sono centrati nell'area disponibile; copyright, Privacy e firma Aldosimone occupano una riga separata in fondo, con 12 px di margine dal bordo della pagina. Su telefono il contenuto segue l'altezza naturale del modulo e dei crediti impilati.
+- Build di produzione riuscita: 18 pagine. `git diff --check` senza rilievi. Screenshot desktop del catalogo e della chiusura controllati visivamente a 1440×900. Il gate integrale resta OFF; non si dichiara un nuovo PASS della skill.
+
+## Centratura homepage e nuova copertina — 17 novembre 2026
+
+- «Una casa, il tuo Salento» e «I nostri servizi» centrano verticalmente l'intero contenuto nello spazio sotto la navigazione. Le altezze interne del primo blocco seguono ora testo e fotografia, anziché occupare artificialmente tutta la sezione.
+- Rimossa la fotografia dai servizi. Titolo, griglia e pulsante sono raccolti al centro; il testo delle singole voci conserva l'allineamento a sinistra per la leggibilità.
+- La nuova copertina è la foto reale del mare e delle barche nel porto di Otranto, dalla galleria La Terrazza. Un componente condiviso la applica alla home e al catalogo IT/EN. Il ritaglio CSS è adattato alla copertina, mantenendo i file WebP responsive esistenti.
+- Build Astro riuscita, 18 pagine. `git diff --check` senza rilievi. Screenshot della homepage su schermo grande (2112×1170) e telefono (390×844) controllati visivamente: copertina caricata, contenuti delle due sezioni al centro su desktop, fotografia assente nei servizi, colonne impilate e contenuto leggibile sul telefono. Il gate integrale resta OFF, come descritto sopra.
+
+## Servizi, immagine soggiorno e contatti — 17 novembre 2026
+
+- Aggiunti alla homepage i quattro servizi dello screenshot, in italiano e inglese: valutazione senza impegno, progetti di ristrutturazione, gestione B&B/case vacanza/masserie, facility management per hotel. La navigazione ora include il collegamento alla sezione servizi. Il link a Vacation Apulia Properties riprende quello dello screenshot; il pulsante di richiesta servizi apre un'email, senza inviarla automaticamente.
+- Nella sezione «Il soggiorno comincia da qui» la camera è stata sostituita con la fotografia reale del mare di Otranto con il veliero in miniatura. Fotografia e colonna di testo condividono il bordo superiore e inferiore; nessuno zoom fuori dalle pagine struttura.
+- La sezione contatti condivisa centra verticalmente il gruppo testo/modulo/crediti nel viewport disponibile. Il footer segue il modulo con uno spazio definito, senza essere spinto in fondo da `space-between`. Sul telefono il contenuto cresce in modo naturale.
+- Anche il catalogo unico cresce con le sue righe, senza imporre due viewport e lasciare spazio inutilizzato sotto le schede.
+- Build di produzione riuscita: 18 pagine. Copy-lint delle homepage italiana e inglese: zero FAIL e zero WARN. `git diff --check` senza rilievi.
+- Eseguito il layout checker della skill su home e catalogo a 1440×900, 1024×768, 768×1024 e 390×844. Le segnalazioni sul ritmo «una o due schermate esatte», sul contenuto centrato e sulla presenza della sezione successiva sono incompatibili con le modifiche espressamente richieste dal cliente: elenco continuo e contatti raccolti. Si mantengono quindi le altezze naturali. Il layout fotografico dei servizi, con immagine a sinistra e testo a destra, genera anche il rilievo `one-sided`; è una composizione intenzionale, non contenuto fuori dal contenitore. Gli allineamenti interni segnalati nella prima esecuzione sono stati successivamente ricondotti alle colonne della griglia.
+- Controllati visivamente gli screenshot desktop e telefono del blocco soggiorno e del modulo; le foto si caricano, la colonna immagine si allinea al testo e i crediti rimangono vicini al modulo. Nessun invio reale del form è stato eseguito.
+- Il gate integrale resta OFF dopo la precedente chiusura; non viene presentato un nuovo PASS. Le verifiche qui descritte sono controlli mirati della revisione, non una nuova certificazione di tutte le schede immobiliari.
+
+## Aggiornamento schede immobili — 17 novembre 2026
+
+- La build Astro aggiornata produce 18 pagine statiche, incluse le dodici schede in italiano e inglese.
+- Sono state aggiunte 59 fotografie locali alle sei gallerie: 14, 13, 16, 1 copertina, 9 e 6. Le immagini sono ottimizzate in WebP con varianti larghe 700 e 1200 pixel; non dipendono dal CDN Wix.
+- La proprietà Aria Sana mostra solo la copertina: la galleria Wix “Maestrale” contiene foto con vista mare e non è stata attribuita alla villetta a Lecce.
+- La build è riuscita dopo l'aggiunta delle schede. Non è stata ancora eseguita una revisione visiva completa delle dodici nuove pagine; il precedente `GATE: PASS` resta riferito alla homepage.
+- Le descrizioni IT/EN non aggiungono tariffe, capienze o distanze non confermate. I dettagli della prima villetta provengono dallo screenshot della scheda fornito dal cliente.
+
 L'ultimo gate completo della homepage è terminato con **GATE: PASS**, senza FAIL aperti e con una deroga motivata per il telefono reale. Il kit ha chiuso il build attivo dopo il PASS; il successivo richiamo ha restituito OFF. Come richiesto dalla skill, non è stato riavviato. Dopo il PASS sono stati completati ritocchi ai bersagli touch, spaziatura del catalogo, frecce dei link e immagini responsive, verificati con i controlli mirati descritti sotto. Non si presenta il PASS precedente come verifica integrale dell'ultima revisione.
 
 ## Risultato della prima implementazione
@@ -45,14 +93,15 @@ Kind `service`, site-kind `other`: servizio di selezione e assistenza per case v
 
 Voce: diretta e ospitale; sei alloggi e località verificati, nessun prezzo, recensione, capienza o tempo di risposta inventato. Non è stato coniato un nuovo nome. Nessun fatto commerciale assunto.
 
-Otto fotografie reali recuperate dal sito italiano del cliente, tutte elencate in `ASSET-SOURCES.json`, conservate localmente e ottimizzate in WebP a 700/1050px. Nessuna fotografia dei mockup generati è pubblicata come immobile reale. I font sono locali. Non servono asset esterni per mostrare le case. È consigliabile sostituire in seguito i verticali con fotografie orizzontali originali più curate, mantenendo i soggetti effettivi.
+Le gallerie attuali contengono 75 fotografie recuperate dal sito italiano del cliente, conservate localmente e ottimizzate in WebP responsive. L'importazione aggiuntiva di Aria Sana è descritta nell'aggiornamento più recente sopra. Nessuna fotografia dei mockup generati è pubblicata come immobile reale. I font sono locali. Non servono asset esterni per mostrare le case.
 
 ## Cosa resta da completare
 
-1. Scelta account GitHub: Safari mostra `beautybrokerworld`; richiesta al cliente prima di creare il repository remoto.
-2. Importazione in Vercel e configurazione del servizio email: chiave Resend, mittente verificato, destinatario confermato e URL ambiente.
-3. Prova di invio e ricezione reale; il successo dei test simulati non equivale a recapito verificato.
-4. Informativa privacy completa da concordare con il titolare: la pagina descrittiva presente non è un testo legale completo approvato.
-5. Verifica finale dati e diritti fotografici, protezione antispam in produzione, dominio, DNS e redirect inglesi da mappare separatamente.
+1. Revisione visiva delle dodici schede di dettaglio su desktop e telefono.
+2. Galleria Aria Sana completata: 17 foto della pagina italiana indicata dal cliente; non resta un'attesa di fotografie per questa scheda.
+3. Importazione in Vercel e configurazione del servizio email: chiave Resend, mittente verificato, destinatario confermato e URL ambiente.
+4. Prova di invio e ricezione reale; il successo dei test simulati non equivale a recapito verificato.
+5. Informativa privacy completa da concordare con il titolare: la pagina descrittiva presente non è un testo legale completo approvato.
+6. Verifica finale dati e diritti fotografici, protezione antispam in produzione, dominio, DNS e redirect inglesi da mappare separatamente.
 
-Non sono stati pubblicati il sito o il repository, inviati messaggi, modificati DNS o disattivato Wix. La versione locale non dipende da Wix per funzionare.
+Il cliente ha creato e popolato il repository privato GitHub `beautybrokerworld/puglia-real-estate-360`. Non sono stati pubblicati il sito, inviati messaggi, modificati DNS o disattivato Wix. La versione locale non dipende da Wix per funzionare.

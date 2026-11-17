@@ -6,9 +6,12 @@ import '@fontsource/instrument-sans/500.css';
 import '../styles/site.css';
 import Contact from '../components/Contact.astro';
 import {routes,type Lang} from '../data/properties';
-const {lang='it',page='home',title,description,contact=true} = Astro.props as {lang:Lang,page:'home'|'properties'|'privacy',title:string,description:string,contact?:boolean};
+const {lang='it',page='home',title,description,contact=true,contactProperty,languagePaths,shareImage} = Astro.props as {lang:Lang,page:'home'|'properties'|'privacy'|'property',title:string,description:string,contact?:boolean,contactProperty?:string,languagePaths?:Record<Lang,string>,shareImage?:string};
 const it=lang==='it',other=it?'en':'it';
 const url=new URL(Astro.url.pathname,Astro.site);
+const fallbackPage=page==='property'?'properties':page;
+const italianHref=languagePaths?.it??routes.it[fallbackPage];
+const englishHref=languagePaths?.en??routes.en[fallbackPage];
 ---
 <!doctype html>
 <html lang={lang} data-type="service" data-radius="soft" data-buttons="block" data-motion>
@@ -18,8 +21,8 @@ const url=new URL(Astro.url.pathname,Astro.site);
   <meta name="page-type" content="service"/><meta name="site-kind" content="other"/>
   <meta name="theme-color" content="#F5F1E8"/>
   <meta name="robots" content={import.meta.env.PUBLIC_INDEXABLE==='true'?'index,follow':'noindex,follow'}/>
-  <link rel="canonical" href={url}/><link rel="alternate" hreflang="it" href={new URL(routes.it[page],Astro.site)}/><link rel="alternate" hreflang="en" href={new URL(routes.en[page],Astro.site)}/><link rel="alternate" hreflang="x-default" href={new URL(routes.it[page],Astro.site)}/>
-  <meta property="og:type" content="website"/><meta property="og:title" content={`${title} | Puglia Real Estate 360`}/><meta property="og:description" content={description}/><meta property="og:image" content={new URL('/images/lecce-aria-sana.webp',Astro.site)}/><meta property="og:url" content={url}/><meta name="twitter:card" content="summary_large_image"/>
+  <link rel="canonical" href={url}/><link rel="alternate" hreflang="it" href={new URL(italianHref,Astro.site)}/><link rel="alternate" hreflang="en" href={new URL(englishHref,Astro.site)}/><link rel="alternate" hreflang="x-default" href={new URL(italianHref,Astro.site)}/>
+  <meta property="og:type" content="website"/><meta property="og:title" content={`${title} | Puglia Real Estate 360`}/><meta property="og:description" content={description}/><meta property="og:image" content={new URL(shareImage??'/images/lecce-aria-sana.webp',Astro.site)}/><meta property="og:url" content={url}/><meta name="twitter:card" content="summary_large_image"/>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
   <link rel="stylesheet" href="/assets/system.css"/><link rel="stylesheet" href="/assets/ui/cards.css"/><link rel="stylesheet" href="/assets/motion/motion.css"/><link rel="stylesheet" href="/assets/layout/layout.css"/>
   <style is:global>
@@ -36,15 +39,20 @@ const url=new URL(Astro.url.pathname,Astro.site);
   <nav class="nav__links" aria-label={it?'Navigazione principale':'Main navigation'}>
     <div class="nav__item"><a class="nav__link" href={routes[lang].home} aria-current={page==='home'?'page':undefined}>Home</a></div>
     <div class="nav__item"><a class="nav__link" href={routes[lang].properties} aria-current={page==='properties'?'page':undefined}>{it?'Le nostre case':'Our homes'}</a></div>
+    <div class="nav__item"><a class="nav__link" href={routes[lang].home+'#servizi'}>{it?'Servizi':'Services'}</a></div>
     <div class="nav__item"><a class="nav__link" href={contact?'#contatti':routes[lang].home+'#contatti'}>{it?'Contatti':'Contact'}</a></div>
   </nav>
-  <div class="language-switch" aria-label={it?'Lingua':'Language'}><a class="nav__link" lang={other} hreflang={other} href={routes[other][page]} aria-label={it?'Read in English':'Leggi in italiano'}>{it?<><strong>IT</strong><span aria-hidden="true"> / </span>EN</>:<>IT<span aria-hidden="true"> / </span><strong>EN</strong></>}</a></div>
+  <div class="language-switch" aria-label={it?'Lingua':'Language'}><a class="nav__link" lang={other} hreflang={other} href={it?englishHref:italianHref} aria-label={it?'Read in English':'Leggi in italiano'}>{it?<><strong>IT</strong><span aria-hidden="true"> / </span>EN</>:<>IT<span aria-hidden="true"> / </span><strong>EN</strong></>}</a></div>
   <button class="nav__toggle" type="button" aria-expanded="false" aria-label={it?'Apri il menu':'Open menu'}><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 6h16M2 14h16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
 </div></header>
 <main id="top"><slot/></main>
-<footer class:list={['footer','closing',{'footer--compact':!contact}]} id="contatti" aria-labelledby={contact?'contact-heading':undefined}>
+<dialog class="lightbox" id="image-lightbox" aria-label={it?'Immagine ingrandita':'Enlarged image'}>
+  <button class="lightbox__close" type="button" aria-label={it?'Chiudi immagine':'Close image'}>×</button>
+  <img class="lightbox__image" alt=""/>
+</dialog>
+<footer class:list={['footer','closing',{'footer--compact':!contact,'footer--contact':contact}]} id="contatti" aria-labelledby={contact?'contact-heading':undefined}>
   <div class="wrap">
-    {contact?<Contact lang={lang}/>:<div class="closing__cta"><a class="link" href={routes[lang].home}>{it?'Torna alla home':'Return to home'}</a></div>}
+    {contact?<Contact lang={lang} propertyId={contactProperty}/>:<div class="closing__cta"><a class="link" href={routes[lang].home}>{it?'Torna alla home':'Return to home'}</a></div>}
     <div class="closing__links"><div class="footer__legal"><span>© {new Date().getFullYear()} Puglia Real Estate 360</span><a class="link" href={routes[lang].privacy}>Privacy</a><a class="link developer-credit" href="https://aldosimone99.github.io" target="_blank" rel="noopener noreferrer">{it?'Sviluppato da':'Developed by'} <strong>Aldosimone</strong></a></div></div>
   </div>
 </footer>
@@ -52,5 +60,23 @@ const url=new URL(Astro.url.pathname,Astro.site);
 <script>
 document.querySelectorAll<HTMLAnchorElement>('[data-property-link]').forEach(link=>link.addEventListener('click',()=>{const select=document.querySelector<HTMLSelectElement>('#property');if(select) {select.value=link.dataset.propertyLink||'';select.dispatchEvent(new Event('change'));}}));
 const selected=new URLSearchParams(location.search).get('property');if(selected){const select=document.querySelector<HTMLSelectElement>('#property');if(select&&Array.from(select.options).some(o=>o.value===selected))select.value=selected;}
+const lightbox=document.querySelector<HTMLDialogElement>('#image-lightbox');
+const lightboxImage=lightbox?.querySelector<HTMLImageElement>('.lightbox__image');
+document.addEventListener('click',(event)=>{
+  const target=event.target;
+  if(!(target instanceof Element))return;
+  const trigger=target.closest<HTMLButtonElement>('[data-lightbox-trigger]');
+  if(trigger&&lightbox&&lightboxImage){
+    const image=trigger.querySelector('img');
+    const src=trigger.dataset.lightboxSrc||image?.currentSrc||image?.src;
+    if(!src)return;
+    lightboxImage.src=src;
+    lightboxImage.alt=image?.alt||'';
+    lightbox.showModal();
+    return;
+  }
+  if(target.closest('.lightbox__close'))lightbox?.close();
+});
+lightbox?.addEventListener('click',(event)=>{if(event.target===lightbox)lightbox.close();});
 </script>
 </body></html>

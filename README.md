@@ -30,9 +30,13 @@ npm test
 
 Il selettore lingua mantiene la pagina equivalente. Ogni scheda preseleziona l'immobile nel modulo. È supportato anche `?property=ID#contatti`, utile per i vecchi indirizzi.
 
+Ogni soluzione ha una pagina di dettaglio in entrambe le lingue: `/soluzioni/{id}/` e `/en/properties/{id}/`.
+
 ## Aggiornare le case
 
-Modificare `src/data/properties.ts`; i testi italiani e inglesi sono associati allo stesso identificativo. Le immagini sono in `public/images`. Le fonti originali sono documentate in `ASSET-SOURCES.json`; i file `.webp` sono le versioni ottimizzate delle foto reali del vecchio sito. I mockup generati non sono usati come fotografie degli immobili.
+Modificare `src/data/properties.ts`; le descrizioni e gli alt text sono bilingui e associati allo stesso identificativo. Le gallerie sono elencate in `src/data/property-galleries.json`; le foto locali si trovano in `public/images/properties/` e le fonti in `PROPERTY-SOURCES.json` e `ASSET-SOURCES.json`. Le immagini `.webp` sono ottimizzate e il sito non dipende dal CDN Wix.
+
+Tutte le sei proprietà hanno una galleria locale associata alla relativa scheda: 75 fotografie complessive. Per Aria Sana sono state recuperate 17 immagini dalla pagina italiana `/la-terrazza-di-otranto`, indicata dal cliente; le immagini vista mare della pagina “Maestrale” restano escluse. La scheda Aria Sana riporta tre camere, due bagni e 120 m² esterni, verificati sul testo italiano originale. Prezzi, posti letto e distanze non vengono pubblicati senza conferma.
 
 Non pubblicare prezzi, capienza, camere o distanze senza conferma. L'associazione fra URL Wix e nome italiano è conservata nel file dati; gli URL inglesi di Wix avevano contenuti diversi e non sono stati automaticamente associati alle stesse case.
 

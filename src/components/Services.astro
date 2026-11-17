@@ -1,0 +1,32 @@
+---
+import type {Lang} from '../data/properties';
+const {lang='it'}=Astro.props as {lang:Lang};
+const it=lang==='it';
+const services=it?[
+  {title:'Valutazione immobiliare',description:'Una valutazione della tua proprietà, senza impegno.'},
+  {title:'Progetti di ristrutturazione',description:'Progetti per ristrutturare e valorizzare il tuo immobile.'},
+  {title:'Gestione delle strutture',description:'Gestione di B&B, case vacanza e masserie tramite Vacation Apulia Properties.',link:true},
+  {title:'Facility management',description:'Ristrutturazioni, pulizie e biancheria per hotel.'}
+]:[
+  {title:'Property valuation',description:'A valuation of your property, with no obligation.'},
+  {title:'Renovation projects',description:'Projects to renovate and improve your property.'},
+  {title:'Accommodation management',description:'Management of B&Bs, holiday homes and masserie through Vacation Apulia Properties.',link:true},
+  {title:'Facility management',description:'Renovation, cleaning and linen services for hotels.'}
+];
+---
+<section class="section services-section" id="servizi" aria-labelledby="services-heading">
+  <div class="wrap">
+    <div class="services-heading">
+      <h2 id="services-heading">{it?'I nostri servizi.':'Our services.'}</h2>
+      <p>{it?'Dalla valutazione alla gestione della tua proprietà.':'From valuation to the management of your property.'}</p>
+    </div>
+    <div class="services-content">
+        <div class="services-list">{services.map(service=><article class="service-item">
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+          {service.link&&<a class="link" href="https://www.vacationapuliaproperties.it/" target="_blank" rel="noopener noreferrer">Vacation Apulia Properties<span class="sr-only">{it?' (si apre in una nuova scheda)':' (opens in a new tab)'}</span></a>}
+        </article>)}</div>
+        <a class="btn btn--primary" href={`mailto:pugliarealestate360@gmail.com?subject=${it?'Servizi%20immobiliari':'Property%20services'}`}>{it?'Parliamo della tua proprietà':'Tell us about your property'}<span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>

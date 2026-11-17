@@ -1,0 +1,9 @@
+---
+import PropertyDetail from '../../components/PropertyDetail.astro';
+import {properties} from '../../data/properties';
+export function getStaticPaths() {
+  return properties.map((property) => ({ params: { slug: property.id }, props: { property } }));
+}
+const {property}=Astro.props;
+---
+<PropertyDetail property={property} lang="it"/>

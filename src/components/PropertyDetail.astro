@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {propertyRoute, routes, type Lang, type Property} from '../data/properties';
+const {property, lang='it'} = Astro.props as {property:Property, lang:Lang};
+const it=lang==='it';
+const cover=property.cover;
+const photos=property.gallery.filter(photo=>photo.src!==cover.src);
+const paths={it:propertyRoute('it',property.id),en:propertyRoute('en',property.id)};
+const imageSizes='(max-width: 639px) calc(100vw - 48px), (max-width: 1023px) calc((100vw - 80px) / 2), calc((100vw - 144px) / 3)';
+---
+
+<Layout lang={lang} page="property" languagePaths={paths} contactProperty={property.id} title={property.title[lang]} description={property.detail[lang]} shareImage={cover.src}>
+  <section class="property-detail-hero" data-enter aria-labelledby="property-title">
+    <div class="wrap property-detail-grid">
+      <div class="property-detail-copy">
+        <a class="link property-back" href={routes[lang].properties}>{it?'Tutte le case':'All holiday homes'}<span aria-hidden="true">↗</span></a>
+        <p class="eyebrow">{property.place}</p>
+        <h1 id="property-title">{property.title[lang]}</h1>
+        <p class="t-lead property-summary">{property.detail[lang]}</p>
+        <p class="property-description">{property.description[lang]}</p>
+        <p class="property-feature">{property.feature[lang]}</p>
+        <a class="btn btn--primary" href="#contatti">{it?'Chiedi informazioni':'Ask about this home'}<span aria-hidden="true">↗</span></a>
+      </div>
+      <button type="button" class:list={['property-detail-cover','frame','frame--photo','lightbox-trigger',{'property-detail-cover--landscape':cover.width>cover.height}]} data-lightbox-trigger data-lightbox-src={cover.src} aria-label={`${it?'Ingrandisci la foto di':'Enlarge photo of'} ${property.title[lang]}`}>
+        <img class="frame__img" src={cover.src} srcset={cover.srcset} sizes="(max-width: 639px) calc(100vw - 48px), (max-width: 1023px) calc((100vw - 128px) * .55), 52vw" style={{objectPosition:property.coverPosition}} alt={cover.alt[lang]} width={cover.width} height={cover.height} fetchpriority="high" data-source="client" data-subject={property.title.en}/>
+      </button>
+    </div>
+  </section>
+
+  {photos.length>0 && <section class="section property-gallery-section" aria-labelledby="property-gallery-heading">
+    <div class="wrap"><h2 id="property-gallery-heading">{it?'Foto della struttura':'Property gallery'}</h2>
+      <div class="property-gallery">{photos.map(photo=><button type="button" class="property-gallery-photo frame frame--photo lightbox-trigger" data-lightbox-trigger data-lightbox-src={photo.src} aria-label={`${it?'Ingrandisci:':'Enlarge:'} ${photo.alt[lang]}`}><img src={photo.src} srcset={photo.srcset} sizes={imageSizes} alt={photo.alt[lang]} width={photo.width} height={photo.height} loading="lazy" data-source="client" data-subject={property.title.en}/></button>)}</div>
+    </div>
+  </section>}
+</Layout>

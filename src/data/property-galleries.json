@@ -1,0 +1,464 @@
+{
+  "lecce-giardino": [
+    {
+      "src": "/images/lecce-giardino.webp",
+      "srcset": "/images/lecce-giardino-700.webp 700w, /images/lecce-giardino.webp 1050w",
+      "width": 1050,
+      "height": 1400
+    },
+    {
+      "src": "/images/giardino-dettaglio.webp",
+      "srcset": "/images/giardino-dettaglio-700.webp 700w, /images/giardino-dettaglio.webp 1050w",
+      "width": 1050,
+      "height": 1400
+    },
+    {
+      "src": "/images/properties/lecce-giardino/03-2a20317041524441836d17c8d31fb82c.webp",
+      "srcset": "/images/properties/lecce-giardino/03-2a20317041524441836d17c8d31fb82c-700.webp 700w, /images/properties/lecce-giardino/03-2a20317041524441836d17c8d31fb82c.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-giardino/04-2455ddf22ed04907b1bea3d1781cab6f.webp",
+      "srcset": "/images/properties/lecce-giardino/04-2455ddf22ed04907b1bea3d1781cab6f-700.webp 700w, /images/properties/lecce-giardino/04-2455ddf22ed04907b1bea3d1781cab6f.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-giardino/05-47a3a1d48ded4ade87edd5c8a96771c8.webp",
+      "srcset": "/images/properties/lecce-giardino/05-47a3a1d48ded4ade87edd5c8a96771c8-700.webp 700w, /images/properties/lecce-giardino/05-47a3a1d48ded4ade87edd5c8a96771c8.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-giardino/06-071e7201fe3845e2ae662890ccf94557.webp",
+      "srcset": "/images/properties/lecce-giardino/06-071e7201fe3845e2ae662890ccf94557-700.webp 700w, /images/properties/lecce-giardino/06-071e7201fe3845e2ae662890ccf94557.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-giardino/07-f4374fae7ba44155b3de249c977b8eca.webp",
+      "srcset": "/images/properties/lecce-giardino/07-f4374fae7ba44155b3de249c977b8eca-700.webp 700w, /images/properties/lecce-giardino/07-f4374fae7ba44155b3de249c977b8eca.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-giardino/08-9d18d746988b405bb727c389148ea808.webp",
+      "srcset": "/images/properties/lecce-giardino/08-9d18d746988b405bb727c389148ea808-700.webp 700w, /images/properties/lecce-giardino/08-9d18d746988b405bb727c389148ea808.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-giardino/09-37e6ca90017943acab9b75d7afc94c53.webp",
+      "srcset": "/images/properties/lecce-giardino/09-37e6ca90017943acab9b75d7afc94c53-700.webp 700w, /images/properties/lecce-giardino/09-37e6ca90017943acab9b75d7afc94c53.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-giardino/10-b062c16e69b94b10b4e459e7578d75b6.webp",
+      "srcset": "/images/properties/lecce-giardino/10-b062c16e69b94b10b4e459e7578d75b6-700.webp 700w, /images/properties/lecce-giardino/10-b062c16e69b94b10b4e459e7578d75b6.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-giardino/11-2b0237371c56476386b03d3db0378cee.webp",
+      "srcset": "/images/properties/lecce-giardino/11-2b0237371c56476386b03d3db0378cee-700.webp 700w, /images/properties/lecce-giardino/11-2b0237371c56476386b03d3db0378cee.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-giardino/12-19536327e1d74265ba9a3db9eb97f702.webp",
+      "srcset": "/images/properties/lecce-giardino/12-19536327e1d74265ba9a3db9eb97f702-700.webp 700w, /images/properties/lecce-giardino/12-19536327e1d74265ba9a3db9eb97f702.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-giardino/13-b8311f97b217465ea133a7e8358e03b9.webp",
+      "srcset": "/images/properties/lecce-giardino/13-b8311f97b217465ea133a7e8358e03b9-700.webp 700w, /images/properties/lecce-giardino/13-b8311f97b217465ea133a7e8358e03b9.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-giardino/14-cec1514aa7c94754bcac6a42b9a87a7a.webp",
+      "srcset": "/images/properties/lecce-giardino/14-cec1514aa7c94754bcac6a42b9a87a7a-700.webp 700w, /images/properties/lecce-giardino/14-cec1514aa7c94754bcac6a42b9a87a7a.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    }
+  ],
+  "otranto-mare": [
+    {
+      "src": "/images/otranto-mare.webp",
+      "srcset": "/images/otranto-mare-700.webp 700w, /images/otranto-mare.webp 1050w",
+      "width": 1050,
+      "height": 2337
+    },
+    {
+      "src": "/images/properties/otranto-mare/02-442984c187aa48fd8c223f10db9b4c95.webp",
+      "srcset": "/images/properties/otranto-mare/02-442984c187aa48fd8c223f10db9b4c95-700.webp 700w, /images/properties/otranto-mare/02-442984c187aa48fd8c223f10db9b4c95.webp 719w",
+      "width": 719,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/otranto-mare/03-c7599b76ed6c4323859f9cfa97847737.webp",
+      "srcset": "/images/properties/otranto-mare/03-c7599b76ed6c4323859f9cfa97847737-700.webp 700w, /images/properties/otranto-mare/03-c7599b76ed6c4323859f9cfa97847737.webp 719w",
+      "width": 719,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/otranto-mare/04-1de4c1c7dcb04a9d802aa8216df7628c.webp",
+      "srcset": "/images/properties/otranto-mare/04-1de4c1c7dcb04a9d802aa8216df7628c-700.webp 700w, /images/properties/otranto-mare/04-1de4c1c7dcb04a9d802aa8216df7628c.webp 719w",
+      "width": 719,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/otranto-mare/05-0ec490a1bf1c405d98e68b171d1ac715.webp",
+      "srcset": "/images/properties/otranto-mare/05-0ec490a1bf1c405d98e68b171d1ac715-700.webp 700w, /images/properties/otranto-mare/05-0ec490a1bf1c405d98e68b171d1ac715.webp 719w",
+      "width": 719,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/otranto-mare/06-53b0b1456e7d4e598960186a8229763f.webp",
+      "srcset": "/images/properties/otranto-mare/06-53b0b1456e7d4e598960186a8229763f-700.webp 700w, /images/properties/otranto-mare/06-53b0b1456e7d4e598960186a8229763f.webp 719w",
+      "width": 719,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/otranto-mare/07-6b91230773f643f88cf2fb639b4ac473.webp",
+      "srcset": "/images/properties/otranto-mare/07-6b91230773f643f88cf2fb639b4ac473-700.webp 700w, /images/properties/otranto-mare/07-6b91230773f643f88cf2fb639b4ac473.webp 719w",
+      "width": 719,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/otranto-mare/08-41178fa552804ec8802324149afe7e40.webp",
+      "srcset": "/images/properties/otranto-mare/08-41178fa552804ec8802324149afe7e40-700.webp 700w, /images/properties/otranto-mare/08-41178fa552804ec8802324149afe7e40.webp 719w",
+      "width": 719,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/otranto-mare/09-34370a9b34f642ea8d424fb6f9fb07da.webp",
+      "srcset": "/images/properties/otranto-mare/09-34370a9b34f642ea8d424fb6f9fb07da-700.webp 700w, /images/properties/otranto-mare/09-34370a9b34f642ea8d424fb6f9fb07da.webp 719w",
+      "width": 719,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/otranto-mare/10-c623e4049c134dcfabc3b8b95e1ffe06.webp",
+      "srcset": "/images/properties/otranto-mare/10-c623e4049c134dcfabc3b8b95e1ffe06-700.webp 700w, /images/properties/otranto-mare/10-c623e4049c134dcfabc3b8b95e1ffe06.webp 719w",
+      "width": 719,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/otranto-mare/11-7aa113a8770c409197ad6b2a95f75e9b.webp",
+      "srcset": "/images/properties/otranto-mare/11-7aa113a8770c409197ad6b2a95f75e9b-700.webp 700w, /images/properties/otranto-mare/11-7aa113a8770c409197ad6b2a95f75e9b.webp 719w",
+      "width": 719,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/otranto-mare/12-f782dd00ac974164bfacb8f01b80270f.webp",
+      "srcset": "/images/properties/otranto-mare/12-f782dd00ac974164bfacb8f01b80270f-700.webp 700w, /images/properties/otranto-mare/12-f782dd00ac974164bfacb8f01b80270f.webp 719w",
+      "width": 719,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/otranto-mare/13-009c6c7ed9424fc5865708da77d4755b.webp",
+      "srcset": "/images/properties/otranto-mare/13-009c6c7ed9424fc5865708da77d4755b-700.webp 700w, /images/properties/otranto-mare/13-009c6c7ed9424fc5865708da77d4755b.webp 719w",
+      "width": 719,
+      "height": 1600
+    }
+  ],
+  "galugnano-piscina": [
+    {
+      "src": "/images/galugnano-piscina.webp",
+      "srcset": "/images/galugnano-piscina-700.webp 700w, /images/galugnano-piscina.webp 1050w",
+      "width": 1050,
+      "height": 1400
+    },
+    {
+      "src": "/images/properties/galugnano-piscina/02-0e7744620a164093ac2327d6c3956633.webp",
+      "srcset": "/images/properties/galugnano-piscina/02-0e7744620a164093ac2327d6c3956633-700.webp 700w, /images/properties/galugnano-piscina/02-0e7744620a164093ac2327d6c3956633.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/galugnano-piscina/03-558193d1f70c4357b60e0a16f70aae6a.webp",
+      "srcset": "/images/properties/galugnano-piscina/03-558193d1f70c4357b60e0a16f70aae6a-700.webp 700w, /images/properties/galugnano-piscina/03-558193d1f70c4357b60e0a16f70aae6a.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/galugnano-piscina/04-4f68f1cb833043ca9862708df4ab3f2c.webp",
+      "srcset": "/images/properties/galugnano-piscina/04-4f68f1cb833043ca9862708df4ab3f2c-700.webp 700w, /images/properties/galugnano-piscina/04-4f68f1cb833043ca9862708df4ab3f2c.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/galugnano-piscina/05-a92c4d6ac5794992a695e293111c09f3.webp",
+      "srcset": "/images/properties/galugnano-piscina/05-a92c4d6ac5794992a695e293111c09f3-700.webp 700w, /images/properties/galugnano-piscina/05-a92c4d6ac5794992a695e293111c09f3.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/galugnano-piscina/06-3fe31d66f0804cc4a6387dcf7c544e12.webp",
+      "srcset": "/images/properties/galugnano-piscina/06-3fe31d66f0804cc4a6387dcf7c544e12-700.webp 700w, /images/properties/galugnano-piscina/06-3fe31d66f0804cc4a6387dcf7c544e12.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/galugnano-piscina/07-06d31325fb2b434d8eaa582a49258a15.webp",
+      "srcset": "/images/properties/galugnano-piscina/07-06d31325fb2b434d8eaa582a49258a15-700.webp 700w, /images/properties/galugnano-piscina/07-06d31325fb2b434d8eaa582a49258a15.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/galugnano-piscina/08-881a7ac46863452fbf4a0d72fdfd2c4b.webp",
+      "srcset": "/images/properties/galugnano-piscina/08-881a7ac46863452fbf4a0d72fdfd2c4b-700.webp 700w, /images/properties/galugnano-piscina/08-881a7ac46863452fbf4a0d72fdfd2c4b.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/galugnano-piscina/09-8d31321ac39140969d51e9a365396d35.webp",
+      "srcset": "/images/properties/galugnano-piscina/09-8d31321ac39140969d51e9a365396d35-700.webp 700w, /images/properties/galugnano-piscina/09-8d31321ac39140969d51e9a365396d35.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/galugnano-piscina/10-dcb2aa6f2b7046889b6a92daed045ceb.webp",
+      "srcset": "/images/properties/galugnano-piscina/10-dcb2aa6f2b7046889b6a92daed045ceb-700.webp 700w, /images/properties/galugnano-piscina/10-dcb2aa6f2b7046889b6a92daed045ceb.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/galugnano-piscina/11-1065606defb24b12ae8c2125939b04e0.webp",
+      "srcset": "/images/properties/galugnano-piscina/11-1065606defb24b12ae8c2125939b04e0-700.webp 700w, /images/properties/galugnano-piscina/11-1065606defb24b12ae8c2125939b04e0.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/galugnano-piscina/12-d1bb1026b72f4531a8d2cd5e8f215820.webp",
+      "srcset": "/images/properties/galugnano-piscina/12-d1bb1026b72f4531a8d2cd5e8f215820-700.webp 700w, /images/properties/galugnano-piscina/12-d1bb1026b72f4531a8d2cd5e8f215820.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/galugnano-piscina/13-5fe441c829db41dd8aed9c88e6912f33.webp",
+      "srcset": "/images/properties/galugnano-piscina/13-5fe441c829db41dd8aed9c88e6912f33-700.webp 700w, /images/properties/galugnano-piscina/13-5fe441c829db41dd8aed9c88e6912f33.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/galugnano-piscina/14-83ce9ef91e434201a29ddccee1e54576.webp",
+      "srcset": "/images/properties/galugnano-piscina/14-83ce9ef91e434201a29ddccee1e54576-700.webp 700w, /images/properties/galugnano-piscina/14-83ce9ef91e434201a29ddccee1e54576.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/galugnano-piscina/15-0e72c72c086f4f88bcf0ba40576d6926.webp",
+      "srcset": "/images/properties/galugnano-piscina/15-0e72c72c086f4f88bcf0ba40576d6926-700.webp 700w, /images/properties/galugnano-piscina/15-0e72c72c086f4f88bcf0ba40576d6926.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/galugnano-piscina/16-b84479e5cf1e498e8b0492700c6b6c3a.webp",
+      "srcset": "/images/properties/galugnano-piscina/16-b84479e5cf1e498e8b0492700c6b6c3a-700.webp 700w, /images/properties/galugnano-piscina/16-b84479e5cf1e498e8b0492700c6b6c3a.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    }
+  ],
+  "lecce-aria-sana": [
+    {
+      "src": "/images/lecce-aria-sana.webp",
+      "srcset": "/images/lecce-aria-sana-700.webp 700w, /images/lecce-aria-sana.webp 1050w",
+      "width": 1050,
+      "height": 1400
+    },
+    {
+      "src": "/images/properties/lecce-aria-sana/02-74e547129c334d72806de43faf637fe6.webp",
+      "srcset": "/images/properties/lecce-aria-sana/02-74e547129c334d72806de43faf637fe6-700.webp 700w, /images/properties/lecce-aria-sana/02-74e547129c334d72806de43faf637fe6.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-aria-sana/03-d42e79820fe94d189b7a3fc8623ca89e.webp",
+      "srcset": "/images/properties/lecce-aria-sana/03-d42e79820fe94d189b7a3fc8623ca89e-700.webp 700w, /images/properties/lecce-aria-sana/03-d42e79820fe94d189b7a3fc8623ca89e.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-aria-sana/04-1f32e1d774d54b419701f4d3ce9a2fab.webp",
+      "srcset": "/images/properties/lecce-aria-sana/04-1f32e1d774d54b419701f4d3ce9a2fab-700.webp 700w, /images/properties/lecce-aria-sana/04-1f32e1d774d54b419701f4d3ce9a2fab.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-aria-sana/05-e49049054d4743a9ab9e7bd3dd06b9ef.webp",
+      "srcset": "/images/properties/lecce-aria-sana/05-e49049054d4743a9ab9e7bd3dd06b9ef-700.webp 700w, /images/properties/lecce-aria-sana/05-e49049054d4743a9ab9e7bd3dd06b9ef.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-aria-sana/06-3e46026b520842c58a6a11978b2e752c.webp",
+      "srcset": "/images/properties/lecce-aria-sana/06-3e46026b520842c58a6a11978b2e752c-700.webp 700w, /images/properties/lecce-aria-sana/06-3e46026b520842c58a6a11978b2e752c.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-aria-sana/07-0e9227422dd24db8ab7fe9f2b20a10b0.webp",
+      "srcset": "/images/properties/lecce-aria-sana/07-0e9227422dd24db8ab7fe9f2b20a10b0-700.webp 700w, /images/properties/lecce-aria-sana/07-0e9227422dd24db8ab7fe9f2b20a10b0.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-aria-sana/08-4c7ffc4ecb844b93ae83e528892b174d.webp",
+      "srcset": "/images/properties/lecce-aria-sana/08-4c7ffc4ecb844b93ae83e528892b174d-700.webp 700w, /images/properties/lecce-aria-sana/08-4c7ffc4ecb844b93ae83e528892b174d.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-aria-sana/09-472ffdd2792e41139f500d4f575e29e4.webp",
+      "srcset": "/images/properties/lecce-aria-sana/09-472ffdd2792e41139f500d4f575e29e4-700.webp 700w, /images/properties/lecce-aria-sana/09-472ffdd2792e41139f500d4f575e29e4.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-aria-sana/10-a3cfab3eb9cd46969e205cecee2e8551.webp",
+      "srcset": "/images/properties/lecce-aria-sana/10-a3cfab3eb9cd46969e205cecee2e8551-700.webp 700w, /images/properties/lecce-aria-sana/10-a3cfab3eb9cd46969e205cecee2e8551.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-aria-sana/11-316d245c81c14495a3b45612b5c0a596.webp",
+      "srcset": "/images/properties/lecce-aria-sana/11-316d245c81c14495a3b45612b5c0a596-700.webp 700w, /images/properties/lecce-aria-sana/11-316d245c81c14495a3b45612b5c0a596.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-aria-sana/12-4512ce34b28545e7a1f1d7494f7858e8.webp",
+      "srcset": "/images/properties/lecce-aria-sana/12-4512ce34b28545e7a1f1d7494f7858e8-700.webp 700w, /images/properties/lecce-aria-sana/12-4512ce34b28545e7a1f1d7494f7858e8.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-aria-sana/13-0a1d862c83a041eb97e9e82a670f9aac.webp",
+      "srcset": "/images/properties/lecce-aria-sana/13-0a1d862c83a041eb97e9e82a670f9aac-700.webp 700w, /images/properties/lecce-aria-sana/13-0a1d862c83a041eb97e9e82a670f9aac.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-aria-sana/14-73ed3951f2164a2a90b657384a6876e5.webp",
+      "srcset": "/images/properties/lecce-aria-sana/14-73ed3951f2164a2a90b657384a6876e5-700.webp 700w, /images/properties/lecce-aria-sana/14-73ed3951f2164a2a90b657384a6876e5.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-aria-sana/15-2ccc78027dc94530874a9b56a41b2e51.webp",
+      "srcset": "/images/properties/lecce-aria-sana/15-2ccc78027dc94530874a9b56a41b2e51-700.webp 700w, /images/properties/lecce-aria-sana/15-2ccc78027dc94530874a9b56a41b2e51.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-aria-sana/16-3f45ba6c9253449c9f5110c30ac95b68.webp",
+      "srcset": "/images/properties/lecce-aria-sana/16-3f45ba6c9253449c9f5110c30ac95b68-700.webp 700w, /images/properties/lecce-aria-sana/16-3f45ba6c9253449c9f5110c30ac95b68.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/lecce-aria-sana/17-fb1ddf36ae1e432f850dd99ce9dc0552.webp",
+      "srcset": "/images/properties/lecce-aria-sana/17-fb1ddf36ae1e432f850dd99ce9dc0552-700.webp 700w, /images/properties/lecce-aria-sana/17-fb1ddf36ae1e432f850dd99ce9dc0552.webp 1200w",
+      "width": 1200,
+      "height": 1600
+    }
+  ],
+  "tramontana": [
+    {
+      "src": "/images/tramontana.webp",
+      "srcset": "/images/tramontana-700.webp 700w, /images/tramontana.webp 1050w",
+      "width": 1050,
+      "height": 788
+    },
+    {
+      "src": "/images/properties/tramontana/02-4c204d760cea47ed97c353bf3e693651.webp",
+      "srcset": "/images/properties/tramontana/02-4c204d760cea47ed97c353bf3e693651-700.webp 700w, /images/properties/tramontana/02-4c204d760cea47ed97c353bf3e693651.webp 1280w",
+      "width": 1280,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/tramontana/03-050bf0cb86904a8cacd8f4c051a07b8a.webp",
+      "srcset": "/images/properties/tramontana/03-050bf0cb86904a8cacd8f4c051a07b8a-700.webp 700w, /images/properties/tramontana/03-050bf0cb86904a8cacd8f4c051a07b8a.webp 1280w",
+      "width": 1280,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/tramontana/04-afe4a8a46acd410faf3bffe112bd903f.webp",
+      "srcset": "/images/properties/tramontana/04-afe4a8a46acd410faf3bffe112bd903f-700.webp 700w, /images/properties/tramontana/04-afe4a8a46acd410faf3bffe112bd903f.webp 1280w",
+      "width": 1280,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/tramontana/05-5952b00a84e94201994f01613af2cb94.webp",
+      "srcset": "/images/properties/tramontana/05-5952b00a84e94201994f01613af2cb94-700.webp 700w, /images/properties/tramontana/05-5952b00a84e94201994f01613af2cb94.webp 1280w",
+      "width": 1280,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/tramontana/06-2693d269f6b14ef1a22a803b77d09358.webp",
+      "srcset": "/images/properties/tramontana/06-2693d269f6b14ef1a22a803b77d09358-700.webp 700w, /images/properties/tramontana/06-2693d269f6b14ef1a22a803b77d09358.webp 1280w",
+      "width": 1280,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/tramontana/07-0a63ee9e86ff4531a5b6956574d7fdce.webp",
+      "srcset": "/images/properties/tramontana/07-0a63ee9e86ff4531a5b6956574d7fdce-700.webp 700w, /images/properties/tramontana/07-0a63ee9e86ff4531a5b6956574d7fdce.webp 1280w",
+      "width": 1280,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/tramontana/08-b0ce69a57e294a6d8357e4dbc834f843.webp",
+      "srcset": "/images/properties/tramontana/08-b0ce69a57e294a6d8357e4dbc834f843-700.webp 700w, /images/properties/tramontana/08-b0ce69a57e294a6d8357e4dbc834f843.webp 1280w",
+      "width": 1280,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/tramontana/09-89e4659408dd4e4b9606e100bd8a1851.webp",
+      "srcset": "/images/properties/tramontana/09-89e4659408dd4e4b9606e100bd8a1851-700.webp 700w, /images/properties/tramontana/09-89e4659408dd4e4b9606e100bd8a1851.webp 1280w",
+      "width": 1280,
+      "height": 1077
+    }
+  ],
+  "la-terrazza": [
+    {
+      "src": "/images/la-terrazza.webp",
+      "srcset": "/images/la-terrazza-700.webp 700w, /images/la-terrazza.webp 1050w",
+      "width": 1050,
+      "height": 786
+    },
+    {
+      "src": "/images/properties/la-terrazza/02-79f241c5a0d045658febffa9582b3ded.webp",
+      "srcset": "/images/properties/la-terrazza/02-79f241c5a0d045658febffa9582b3ded-700.webp 700w, /images/properties/la-terrazza/02-79f241c5a0d045658febffa9582b3ded.webp 1280w",
+      "width": 1280,
+      "height": 958
+    },
+    {
+      "src": "/images/properties/la-terrazza/03-aa707f90a5054280bc049fff936322b9.webp",
+      "srcset": "/images/properties/la-terrazza/03-aa707f90a5054280bc049fff936322b9-700.webp 700w, /images/properties/la-terrazza/03-aa707f90a5054280bc049fff936322b9.webp 1280w",
+      "width": 1280,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/la-terrazza/04-89a08daac8734523937880874183ca11.webp",
+      "srcset": "/images/properties/la-terrazza/04-89a08daac8734523937880874183ca11-700.webp 700w, /images/properties/la-terrazza/04-89a08daac8734523937880874183ca11.webp 1280w",
+      "width": 1280,
+      "height": 1600
+    },
+    {
+      "src": "/images/properties/la-terrazza/05-68ddffd577ee46aaaff586d53d59ee1c.webp",
+      "srcset": "/images/properties/la-terrazza/05-68ddffd577ee46aaaff586d53d59ee1c-700.webp 700w, /images/properties/la-terrazza/05-68ddffd577ee46aaaff586d53d59ee1c.webp 1280w",
+      "width": 1280,
+      "height": 958
+    },
+    {
+      "src": "/images/properties/la-terrazza/06-75daf040e549400c967a91a4bd8441bc.webp",
+      "srcset": "/images/properties/la-terrazza/06-75daf040e549400c967a91a4bd8441bc-700.webp 700w, /images/properties/la-terrazza/06-75daf040e549400c967a91a4bd8441bc.webp 1280w",
+      "width": 1280,
+      "height": 958
+    }
+  ]
+}

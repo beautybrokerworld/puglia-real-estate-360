@@ -1,0 +1,9 @@
+---
+import type {Lang} from '../data/properties';
+import galleryAssets from '../data/property-galleries.json';
+const {lang='it'}=Astro.props as {lang:Lang};
+const photo=galleryAssets['la-terrazza'][2];
+---
+<figure class="hero__stage hero-photo--coast frame frame--photo">
+  <img src={photo.src} srcset={photo.srcset} sizes="(max-width: 639px) calc(100vw - 48px), (max-width: 1023px) calc(100vw - 96px), calc(100vw - 160px)" alt={lang==='it'?'Il mare turchese e le barche nel porto di Otranto':'Turquoise sea and boats in Otranto harbour'} width={photo.width} height={photo.height} fetchpriority="high" data-source="client" data-subject="Otranto coast and harbour"/>
+</figure>
