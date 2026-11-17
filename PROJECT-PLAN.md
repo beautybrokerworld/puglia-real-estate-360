@@ -61,7 +61,7 @@ Non dedurre camere, ospiti, prezzi o distanze dalle vecchie schede: il sito Wix 
 - [ ] Verificare testo privacy con il titolare: identità, conservazione, fornitori e diritti non vanno inventati.
 
 ### 5. GitHub e Vercel
-- [ ] Inizializzare Git e creare il primo commit dopo la verifica.
+- [x] Inizializzare Git e creare il primo commit dopo la verifica.
 - [ ] Creare il repository GitHub e caricare il progetto quando l'accesso è disponibile.
 - [ ] Importare il repository in Vercel (framework Astro, comando `npm run build`, output `dist`).
 - [ ] Aggiungere le variabili d'ambiente e verificare l'anteprima pubblicata.
@@ -99,6 +99,8 @@ Piano avviato il 17 novembre 2026. Le caselle verranno aggiornate sulla base del
 
 Prima implementazione completata: 6 pagine statiche, 8 fotografie reali locali anche in WebP, font locali, modulo con 9 test server passati, collegamenti e asset interni verificati. Nessuna email reale inviata. La pagina privacy è una base da completare con il titolare. Il browser Safari risulta collegato a GitHub come `beautybrokerworld`: scelta dell’account richiesta prima di creare il repository remoto.
 
-Verifiche aggiornate: copy-lint senza FAIL o WARN nelle quattro pagine principali; controllo della landing senza rilievi a 1440, 1024, 820, 768 e 390; catalogo inglese senza rilievi a 1440 e 390. Primo gate della homepage corretto fino a PASS, con una deroga per il numero telefonico reale fornito dal cliente. Il controllo prestazioni della homepage non rileva FAIL, segnala soltanto immagini più grandi del necessario sui telefoni.
+Verifiche aggiornate: copy-lint senza FAIL o WARN nelle quattro pagine principali; controllo della landing senza rilievi a 1440, 1024, 820, 768 e 390; catalogo inglese senza rilievi a 1440 e 390. Primo gate della homepage corretto fino a PASS, con una deroga per il numero telefonico reale fornito dal cliente. Il primo controllo prestazioni aveva segnalato immagini grandi sui telefoni; l’ottimizzazione responsive successiva ha risolto anche questo avviso.
 
 Ottimizzazione finale: immagini responsive a 700/1050px. Homepage e catalogo superano il controllo prestazioni sia desktop sia mobile senza FAIL o WARN. Riferimento completo: `VERIFICHE.md`.
+
+Repository Git locale inizializzato sul ramo `main`; primo commit applicativo `86903c3`. Repository GitHub remoto non ancora creato, in attesa della scelta dell’account.
