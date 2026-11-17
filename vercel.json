@@ -1,0 +1,20 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "astro",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "regions": ["fra1"],
+  "functions": {"api/contact.js": {"maxDuration": 15}},
+  "headers": [{"source":"/(.*)","headers":[{"key":"X-Content-Type-Options","value":"nosniff"},{"key":"Referrer-Policy","value":"strict-origin-when-cross-origin"},{"key":"X-Frame-Options","value":"DENY"}]}],
+  "redirects": [
+    {"source":"/elenco-vacanze-otranto-appartamenti","destination":"/soluzioni/","permanent":true},
+    {"source":"/en/elenco-vacanze-otranto-appartamenti","destination":"/en/properties/","permanent":true},
+    {"source":"/belvedere","destination":"/soluzioni/?property=lecce-giardino#contatti","permanent":true},
+    {"source":"/rosa-dei-venti","destination":"/soluzioni/?property=otranto-mare#contatti","permanent":true},
+    {"source":"/appartamento-magnolia","destination":"/soluzioni/?property=galugnano-piscina#contatti","permanent":true},
+    {"source":"/la-terrazza-di-otranto","destination":"/soluzioni/?property=lecce-aria-sana#contatti","permanent":true},
+    {"source":"/vacanze-copy-copy-copy-copy-copy-copy-copy-copy-copy-copy","destination":"/soluzioni/?property=tramontana#contatti","permanent":true},
+    {"source":"/vacanze-copy-copy-copy-copy-copy-copy-copy-copy-copy-copy-copy","destination":"/soluzioni/?property=la-terrazza#contatti","permanent":true},
+    {"source":"/preventivo-viaggio","destination":"/#contatti","permanent":true}
+  ]
+}

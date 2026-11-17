@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.astro/
+.vercel/
+.env
+.env.*
+!.env.example
+.DS_Store
+.taste-skill/chrome*/
+shots/
+.taste-skill/gate/
+.taste-skill/gate.json

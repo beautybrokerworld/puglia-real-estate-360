@@ -1,0 +1,37 @@
+---
+import {properties, routes, type Lang} from '../data/properties';
+const {lang='it'} = Astro.props as {lang:Lang};
+const it=lang==='it';
+---
+<div class="closing__cta contact-grid">
+  <div class="contact-copy">
+    <p class="eyebrow">{it?'La tua prossima vacanza':'Your next holiday'}</p>
+    <h2 id="contact-heading">{it?'Parliamo del tuo soggiorno.':'Let’s plan your stay.'}</h2>
+    <p class="t-lead">{it?'Raccontaci quando vuoi partire e quale casa ti interessa. Ti risponderemo con disponibilità e informazioni.':'Tell us when you would like to travel and which home you have in mind. We will reply with availability and details.'}</p>
+    <div class="contact-details">
+      <a class="link" href="mailto:pugliarealestate360@gmail.com">pugliarealestate360@gmail.com</a>
+      <a class="link" href="tel:+393202354042">+39 320 235 4042</a>
+      <span>Via Marco Basseo, Lecce</span>
+    </div>
+  </div>
+  <form class="form booking-form" action="/api/contact" method="post" data-endpoint="/api/contact"
+    data-fix={it?'Controlla i campi indicati: {n}.':'Please check the marked fields: {n}.'}
+    data-sending={it?'Invio della richiesta…':'Sending your enquiry…'}
+    data-sent={it?'La tua richiesta è stata inviata. Ti risponderemo via email.':'Your enquiry has been sent. We will reply by email.'}
+    data-failed={it?'Invio non riuscito. I dati sono rimasti nel modulo: riprova o scrivici via email.':'Your enquiry could not be sent. Your details are still here: try again or email us.'}>
+    <input type="hidden" name="lang" value={lang}/>
+    <div class="hp" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" autocomplete="off" tabindex="-1"/></div>
+    <div class="form-pair">
+      <div class="field"><label for="name">{it?'Nome e cognome':'Full name'} <span aria-hidden="true">*</span></label><input id="name" name="name" autocomplete="name" required minlength="2" maxlength="100" data-error={it?'Inserisci il tuo nome (almeno 2 caratteri).':'Enter your name (at least 2 characters).'}/></div>
+      <div class="field"><label for="email">Email <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" required maxlength="254" data-error={it?'Inserisci un indirizzo email valido.':'Enter a valid email address.'}/></div>
+    </div>
+    <div class="form-pair">
+      <div class="field"><label for="phone">{it?'Telefono (facoltativo)':'Phone (optional)'}</label><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40"/></div>
+      <div class="field"><label for="property">{it?'La soluzione che ti interessa':'Your preferred property'}</label><select id="property" name="property"><option value="">{it?'Aiutami a scegliere':'Help me choose'}</option>{properties.map(p=><option value={p.id}>{p.title[lang]} — {p.place}</option>)}</select></div>
+    </div>
+    <div class="field"><label for="message">{it?'Il tuo messaggio':'Your message'} <span aria-hidden="true">*</span></label><textarea id="message" name="message" rows="3" required minlength="10" maxlength="4000" placeholder={it?'Date indicative, numero di ospiti e ciò che cerchi.':'Approximate dates, number of guests and what you are looking for.'} data-error={it?'Scrivi un messaggio di almeno 10 caratteri.':'Write a message of at least 10 characters.'}></textarea></div>
+    <div class="field privacy-check"><label for="privacy"><input id="privacy" name="privacy" type="checkbox" value="accepted" required data-error={it?'Conferma di aver letto l’informativa privacy.':'Please confirm you have read the privacy notice.'}/><span>{it?'Ho letto l’':'I have read the '}<a class="link" href={routes[lang].privacy}>{it?'informativa privacy':'privacy notice'}</a>.</span></label></div>
+    <button class="btn btn--primary" type="submit">{it?'Invia la richiesta':'Send an enquiry'}<span aria-hidden="true">↗</span></button>
+    <p class="form__status" role="status" data-form-status></p>
+  </form>
+</div>

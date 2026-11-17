@@ -1,0 +1,56 @@
+---
+import '@fontsource/instrument-serif/400.css';
+import '@fontsource/instrument-serif/400-italic.css';
+import '@fontsource/instrument-sans/400.css';
+import '@fontsource/instrument-sans/500.css';
+import '../styles/site.css';
+import Contact from '../components/Contact.astro';
+import {routes,type Lang} from '../data/properties';
+const {lang='it',page='home',title,description,contact=true} = Astro.props as {lang:Lang,page:'home'|'properties'|'privacy',title:string,description:string,contact?:boolean};
+const it=lang==='it',other=it?'en':'it';
+const url=new URL(Astro.url.pathname,Astro.site);
+---
+<!doctype html>
+<html lang={lang} data-type="service" data-radius="soft" data-buttons="block" data-motion>
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>{title} | Puglia Real Estate 360</title><meta name="description" content={description}/>
+  <meta name="page-type" content="service"/><meta name="site-kind" content="other"/>
+  <meta name="theme-color" content="#F5F1E8"/>
+  <meta name="robots" content={import.meta.env.PUBLIC_INDEXABLE==='true'?'index,follow':'noindex,follow'}/>
+  <link rel="canonical" href={url}/><link rel="alternate" hreflang="it" href={new URL(routes.it[page],Astro.site)}/><link rel="alternate" hreflang="en" href={new URL(routes.en[page],Astro.site)}/><link rel="alternate" hreflang="x-default" href={new URL(routes.it[page],Astro.site)}/>
+  <meta property="og:type" content="website"/><meta property="og:title" content={`${title} | Puglia Real Estate 360`}/><meta property="og:description" content={description}/><meta property="og:image" content={new URL('/images/lecce-aria-sana.webp',Astro.site)}/><meta property="og:url" content={url}/><meta name="twitter:card" content="summary_large_image"/>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+  <link rel="stylesheet" href="/assets/system.css"/><link rel="stylesheet" href="/assets/ui/cards.css"/><link rel="stylesheet" href="/assets/motion/motion.css"/><link rel="stylesheet" href="/assets/layout/layout.css"/>
+  <style is:global>
+  :root {--p-bg:#f5f1e8;--p-surface:#e9e5db;--p-ink:#282923;--p-muted:#5c6055;--p-accent:#626b51;--p-accent-ink:#f5f1e8;--p-action:#626b51;--p-action-ink:#f5f1e8;--p-inv-bg:#282923;--p-inv-surface:#34352f;--p-inv-ink:#f5f1e8;--p-inv-muted:#a09e96;--p-inv-accent:#f5f1e8;--p-inv-accent-ink:#282923;--p-inv-action:#f5f1e8;--p-inv-action-ink:#282923;--font-display:"Instrument Serif",Georgia,serif;--font-text:"Instrument Sans",system-ui,sans-serif;--display-weight:400;--display-tracking:-.012em;--display-tracking-xl:-.016em;--ly-scale:1.12;}
+  </style>
+  <script is:inline>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700);document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+  <link rel="modulepreload" href="/assets/moments/moments.js"/><link rel="modulepreload" href="/assets/moments/lib.js"/><link rel="modulepreload" href="/assets/moments/picture-develops/moment.js"/>
+</head>
+<body>
+<!-- service; approved design: Mediterranean editorial, ivory/olive, Instrument Serif/Sans, editorial hero, nav-split, footer-columns, close-type, block buttons, wordmark; picture-develops film; no WebGL. -->
+<header class="nav"><div class="wrap nav__bar">
+  <a class="skip-link" href="#top">{it?'Vai al contenuto':'Skip to content'}</a>
+  <a class="nav__logo wordmark" href={routes[lang].home}><span>Puglia Real Estate <span class="brand-number">360</span></span></a>
+  <nav class="nav__links" aria-label={it?'Navigazione principale':'Main navigation'}>
+    <div class="nav__item"><a class="nav__link" href={routes[lang].home} aria-current={page==='home'?'page':undefined}>Home</a></div>
+    <div class="nav__item"><a class="nav__link" href={routes[lang].properties} aria-current={page==='properties'?'page':undefined}>{it?'Le nostre case':'Our homes'}</a></div>
+    <div class="nav__item"><a class="nav__link" href={contact?'#contatti':routes[lang].home+'#contatti'}>{it?'Contatti':'Contact'}</a></div>
+  </nav>
+  <div class="language-switch" aria-label={it?'Lingua':'Language'}><a class="nav__link" lang={other} hreflang={other} href={routes[other][page]} aria-label={it?'Read in English':'Leggi in italiano'}>{it?<><strong>IT</strong><span aria-hidden="true"> / </span>EN</>:<>IT<span aria-hidden="true"> / </span><strong>EN</strong></>}</a></div>
+  <button class="nav__toggle" type="button" aria-expanded="false" aria-label={it?'Apri il menu':'Open menu'}><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 6h16M2 14h16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+</div></header>
+<main id="top"><slot/></main>
+<footer class:list={['footer','closing',{'footer--compact':!contact}]} id="contatti" aria-labelledby={contact?'contact-heading':undefined}>
+  <div class="wrap">
+    {contact?<Contact lang={lang}/>:<div class="closing__cta"><a class="link" href={routes[lang].home}>{it?'Torna alla home':'Return to home'}</a></div>}
+    <div class="closing__links"><div class="footer__legal"><span>© {new Date().getFullYear()} Puglia Real Estate 360</span><a class="link" href={routes[lang].privacy}>Privacy</a><a class="link developer-credit" href="https://aldosimone99.github.io" target="_blank" rel="noopener noreferrer">{it?'Sviluppato da':'Developed by'} <strong>Aldosimone</strong></a></div></div>
+  </div>
+</footer>
+<script is:inline type="module" src="/assets/system.js"></script><script is:inline type="module" src="/assets/motion/motion.js"></script><script is:inline type="module" src="/assets/layout/layout.js"></script>
+<script>
+document.querySelectorAll<HTMLAnchorElement>('[data-property-link]').forEach(link=>link.addEventListener('click',()=>{const select=document.querySelector<HTMLSelectElement>('#property');if(select) {select.value=link.dataset.propertyLink||'';select.dispatchEvent(new Event('change'));}}));
+const selected=new URLSearchParams(location.search).get('property');if(selected){const select=document.querySelector<HTMLSelectElement>('#property');if(select&&Array.from(select.options).some(o=>o.value===selected))select.value=selected;}
+</script>
+</body></html>

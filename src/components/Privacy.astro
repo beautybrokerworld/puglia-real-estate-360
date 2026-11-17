@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import type {Lang} from '../data/properties';
+const {lang='it'}=Astro.props as {lang:Lang};const it=lang==='it';
+---
+<Layout lang={lang} page="privacy" contact={false} title={it?'Privacy e contatti':'Privacy and contact'} description={it?'Informazioni sul modulo di contatto di Puglia Real Estate 360.':'Information about the Puglia Real Estate 360 enquiry form.'}>
+<section class="legal-hero" aria-labelledby="privacy-heading"><div class="wrap"><div class="legal-copy"><h1 id="privacy-heading">{it?'Privacy e contatti':'Privacy and contact'}</h1>
+<h2>{it?'La tua richiesta':'Your enquiry'}</h2><p>{it?'Il modulo raccoglie nome, email, telefono facoltativo, soluzione di interesse e messaggio. Queste informazioni vengono utilizzate per rispondere alla richiesta relativa al soggiorno. Non inserire nel messaggio dati sanitari, documenti di identità o informazioni di pagamento.':'The form collects your name, email, optional phone number, preferred property and message. This information is used to respond to your enquiry about a stay. Do not include health information, identity documents or payment details in your message.'}</p>
+<h2>{it?'Invio dei messaggi':'Message delivery'}</h2><p>{it?'Il sito è predisposto per l’hosting su Vercel e l’invio delle richieste tramite Resend alla casella di Puglia Real Estate 360. Il sito non include strumenti di analisi del traffico, pubblicità o contenuti social incorporati.':'The website is prepared for hosting on Vercel and delivery of enquiries through Resend to the Puglia Real Estate 360 mailbox. It does not include traffic analytics, advertising or embedded social content.'}</p>
+<h2>{it?'Scrivici':'Contact us'}</h2><p>{it?'Per domande sui dati che hai inviato, scrivi a ':'For questions about information you have submitted, email '}<a class="link" href="mailto:pugliarealestate360@gmail.com">pugliarealestate360@gmail.com</a>.</p>
+</div></div></section>
+</Layout>

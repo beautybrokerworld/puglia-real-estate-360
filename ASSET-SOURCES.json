@@ -1,0 +1,74 @@
+[
+  {
+    "file": "lecce-giardino.jpg",
+    "source": "https://static.wixstatic.com/media/68a4ad_1d7ff29d1c594f16a0a53e3535777ef2~mv2.jpeg/v1/fit/w_1800,h_1400,q_85/68a4ad_1d7ff29d1c594f16a0a53e3535777ef2~mv2.jpeg",
+    "type": "client",
+    "retrieved": "2026-11-17",
+    "bytes": 429783,
+    "optimized": "lecce-giardino.webp",
+    "responsive": "lecce-giardino-700.webp"
+  },
+  {
+    "file": "otranto-mare.jpg",
+    "source": "https://static.wixstatic.com/media/68a4ad_91675ffff6cb46d5a835ae986075f3c0~mv2.jpeg/v1/fit/w_1800,h_1400,q_85/68a4ad_91675ffff6cb46d5a835ae986075f3c0~mv2.jpeg",
+    "type": "client",
+    "retrieved": "2026-11-17",
+    "bytes": 179875,
+    "optimized": "otranto-mare.webp",
+    "responsive": "otranto-mare-700.webp"
+  },
+  {
+    "file": "galugnano-piscina.jpg",
+    "source": "https://static.wixstatic.com/media/68a4ad_c2c8fae4892e40bd918774d16a853beb~mv2.jpeg/v1/fit/w_1800,h_1400,q_85/68a4ad_c2c8fae4892e40bd918774d16a853beb~mv2.jpeg",
+    "type": "client",
+    "retrieved": "2026-11-17",
+    "bytes": 246001,
+    "optimized": "galugnano-piscina.webp",
+    "responsive": "galugnano-piscina-700.webp"
+  },
+  {
+    "file": "lecce-aria-sana.jpg",
+    "source": "https://static.wixstatic.com/media/68a4ad_06f0cebb164243d984d0ae49e3aadba6~mv2.jpeg/v1/fit/w_1800,h_1400,q_85/68a4ad_06f0cebb164243d984d0ae49e3aadba6~mv2.jpeg",
+    "type": "client",
+    "retrieved": "2026-11-17",
+    "bytes": 376881,
+    "optimized": "lecce-aria-sana.webp",
+    "responsive": "lecce-aria-sana-700.webp"
+  },
+  {
+    "file": "tramontana.jpg",
+    "source": "https://static.wixstatic.com/media/68a4ad_564dd6c85f47499a96800d6b66d112b2~mv2.jpeg/v1/fit/w_1800,h_1400,q_85/68a4ad_564dd6c85f47499a96800d6b66d112b2~mv2.jpeg",
+    "type": "client",
+    "retrieved": "2026-11-17",
+    "bytes": 299935,
+    "optimized": "tramontana.webp",
+    "responsive": "tramontana-700.webp"
+  },
+  {
+    "file": "la-terrazza.jpg",
+    "source": "https://static.wixstatic.com/media/68a4ad_7da86a414b3f4d2e92e152d6ecd1021f~mv2.jpeg/v1/fit/w_1800,h_1400,q_85/68a4ad_7da86a414b3f4d2e92e152d6ecd1021f~mv2.jpeg",
+    "type": "client",
+    "retrieved": "2026-11-17",
+    "bytes": 287133,
+    "optimized": "la-terrazza.webp",
+    "responsive": "la-terrazza-700.webp"
+  },
+  {
+    "file": "terrazza-hero.jpg",
+    "source": "https://static.wixstatic.com/media/68a4ad_e49049054d4743a9ab9e7bd3dd06b9ef~mv2.jpeg/v1/fit/w_1800,h_1400,q_85/68a4ad_e49049054d4743a9ab9e7bd3dd06b9ef~mv2.jpeg",
+    "type": "client",
+    "retrieved": "2026-11-17",
+    "bytes": 444333,
+    "optimized": "terrazza-hero.webp",
+    "responsive": "terrazza-hero-700.webp"
+  },
+  {
+    "file": "giardino-dettaglio.jpg",
+    "source": "https://static.wixstatic.com/media/68a4ad_5eea8be7f2b64a63b322b97784372172~mv2.jpeg/v1/fit/w_1800,h_1400,q_85/68a4ad_5eea8be7f2b64a63b322b97784372172~mv2.jpeg",
+    "type": "client",
+    "retrieved": "2026-11-17",
+    "bytes": 244638,
+    "optimized": "giardino-dettaglio.webp",
+    "responsive": "giardino-dettaglio-700.webp"
+  }
+]
