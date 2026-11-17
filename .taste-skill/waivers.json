@@ -1,7 +1,0 @@
-[
-  {
-    "check": "phone-number",
-    "target": "contact-details",
-    "reason": "Il numero +39 320 235 4042 \u00e8 fornito negli screenshot del cliente e pubblicato sul suo sito; contatto reale autorizzato, non inventato."
-  }
-]
